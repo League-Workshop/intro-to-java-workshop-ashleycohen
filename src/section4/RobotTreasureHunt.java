@@ -53,7 +53,10 @@ ash.microMove(3);
 		System.out.println();
 		// 7. If robot is at same location as the little girl
 		//      --make a pop-up tell the robot where to go next
-		
+if(robotXLocation==720) {
+	JOptionPane.showMessageDialog(parentComponent, message);
+}
+
 		// 8. Give the user subsequent clues at different locations on the image
 		// (pirate robot, swamp, parrots, etc.)
 		
