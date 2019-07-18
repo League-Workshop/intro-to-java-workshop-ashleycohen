@@ -20,13 +20,13 @@ public class RobotTreasureHunt implements KeyEventDispatcher{
 	private void goUp() throws InterruptedException {
 		// 2. Make the robot move up the screen (use setAngle(angle) and microMove(distance))
 	ash.setAngle(0);
-	ash.microMove(3);
+	ash.microMove(7);
 	}
 
 	private void goDown() throws InterruptedException{
 		// 3. make the robot move down the screen (use setAngle(angle) and microMove(distance))
 		ash.setAngle(180);
-		ash.microMove(3);
+		ash.microMove(7);
 	}
 
 	private void turnLeft() throws InterruptedException{
@@ -53,17 +53,30 @@ ash.microMove(3);
 		System.out.println();
 		// 7. If robot is at same location as the little girl
 		//      --make a pop-up tell the robot where to go next
-if(robotXLocation==720) {
-	JOptionPane.showMessageDialog(parentComponent, message);
+if(robotXLocation<735 && robotXLocation>711) {
+ JOptionPane.showMessageDialog(null,"Follow the tweets.");
 }
+	
 
 		// 8. Give the user subsequent clues at different locations on the image
 		// (pirate robot, swamp, parrots, etc.)
-		
+	if(robotXLocation<657 && robotXLocation>582) {
+		 JOptionPane.showMessageDialog(null,"Knock knock.");
+		}
+	
+	if(robotXLocation<309 && robotXLocation>198) {
+		 JOptionPane.showMessageDialog(null,"Seek the sword. Battle the pirate.");
+		}
+	
+	if(robotXLocation<567 && robotXLocation>519) {
+		 JOptionPane.showMessageDialog(null,"You won the battle and will receive the treasure!");
+		 treasureFound(); 
+		}
+	
+	}
 		// 9.  If the robot is in the final location
 		//     --call the treasureFound() method
 		
-	}
 
 	private void go() {
 		KeyboardFocusManager.getCurrentKeyboardFocusManager().addKeyEventDispatcher(this);
